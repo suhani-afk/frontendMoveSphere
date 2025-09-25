@@ -1,0 +1,927 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+  background: #f5f6fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #222;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.menu li {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  border-radius: 6px;
+  overflow: hidden;
+  min-width: 240px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.8rem 1rem;
+  color: #222;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background: #f1f1f1;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: 2px solid #333;
+  transition: all 0.25s;
+  margin-left: 0.5rem;
+  color: #222;
+  background: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 72vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+  opacity: 1;
+  filter: brightness(0.55);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+.cta-row {
+  margin-top: 1rem;
+}
+
+/* Sections */
+.section,
+.services {
+  padding: 3rem 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.services h2,
+.section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.muted {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Cards & lists */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1.25rem;
+  border-radius: 14px;
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: pointer;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eee;
+}
+
+.card img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.grid-list {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Forms */
+.filters {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.filters input,
+.filters select,
+.auth-form form input {
+  padding: 0.6rem 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  min-width: 180px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.auth-form {
+  width: 100%;            /* allow full width within container */
+  max-width: 500px;       /* maximum width */
+  margin: 3rem auto;      /* center it horizontally */
+  background: #fff;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  box-sizing: border-box; /* include padding in width */
+}
+
+
+.auth-form form button {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Tables */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.actions {
+  margin: 0.75rem 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tab {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.tab.active {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* Chat */
+.chatbox {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.chatlog {
+  height: 320px;
+  overflow-y: auto;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  background: #fafafa;
+  box-sizing: border-box;
+}
+
+.chat-message {
+  margin-bottom: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.chat-message.user {
+  background-color: #2563eb;
+  color: white;
+  align-self: flex-end;
+  margin-left: auto;
+  text-align: right;
+}
+
+.chat-message.bot {
+  background-color: #e4e6eb;
+  color: #333;
+  align-self: flex-start;
+  margin-right: auto;
+  text-align: left;
+}
+
+.chatinput {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  box-sizing: border-box;
+}
+
+.chatinput input {
+  flex: 1;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Map */
+.map-box {
+  height: 380px;
+  background: #e5eefc;
+  border: 1px dashed #2563eb;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  box-sizing: border-box;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #fff;
+  margin-top: 2rem;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Utility */
+a {
+  cursor: pointer;
+}
+.hero {
+  position: relative;
+  height: 72vh;
+  display: flex;
+  justify-content: center; /* centers content horizontally */
+  align-items: center;     /* centers content vertically */
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero-slideshow-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-slideshow {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+}
+
+.hero-slideshow > div {
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+/* Ensure hero text is above slideshow */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  padding: 0 1rem;
+}
+
+/* Remove all focus outlines and shadows on interactive elements */
+a:focus, a:active,
+button:focus, button:active,
+input:focus, select:focus, textarea:focus,
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove underline on all link states */
+a, a:visited, a:hover, a:focus, a:active {
+  text-decoration: none !important;
+}
+
+/* Optional: Disable focus ring on mouse click but keep for keyboard users */
+* {
+  outline-offset: 0 !important;
+}
+
+/* You can also add this to disable focus rings only on mouse use but not keyboard */
+body :focus:not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Ensure page takes full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content grows to push footer down */
+main {
+  flex: 1;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.04);
+  font-size: 0.95rem;
+  color: #555;
+}
+/* Make body take full height and use flex layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content expands to push footer down */
+main {
+  flex: 1;
+}
+/* Make the React root a flex container */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Expand <main> to push footer down */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.hero-slideshow > div {
+  filter: blur(1.5px);
+  transform: scale(1.0); /* prevents edges after blur */
+}
+
+/* Dropdown menu blue box */
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: #2563eb;        /* Blue background */
+  color: #fff;                /* White text */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  display: none;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 240px;
+  padding: 0.5rem 0;          /* Add some vertical space */
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.8rem 1rem;
+  color: #fff;                /* White links */
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background: rgba(255, 255, 255, 0.15); /* Subtle hover */
+}
+/* Style the top-level Modules button */
+.menu .dropdown {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: #2563eb;   /* blue background */
+  color: #fff;           /* white text */
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+/* Hover effect */
+.menu .dropdown:hover {
+  background: #1e4bb8;   /* darker blue */
+}
+/* Add spacing between inputs inside auth forms */
+.auth-form form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-top: 1rem;   /* 👈 space between inputs */
+}
+
+.auth-form form button {
+  margin-top: 0.5rem;    /* 👈 space above the Login button */
+}
+
+
+/* Hamburger menu */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #222;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Animate hamburger into X when open */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Menu toggle for mobile */
+.menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.menu.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 1rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.menu.active li {
+  margin-bottom: 0.5rem;
+}
+
+/* Hide original menu on smaller screens if needed */
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+/* Align auth buttons and hamburger together */
+.auth-hamburger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+/* Hamburger menu style */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #222;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Right-aligned dropdown menu */
+.dropdown-menu-right {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  min-width: 220px;
+  z-index: 100;
+}
+
+.dropdown-menu-right li a {
+  display: block;
+  padding: 0.8rem 1rem;
+  color: #222;
+  text-decoration: none;
+}
+
+.dropdown-menu-right li a:hover {
+  background: #f1f1f1;
+}
+.footer {
+  background: #1f2937; /* dark gray */
+  color: #f9fafb;      /* light text */
+  padding: 3rem 1.5rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 1rem;
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #f9fafb;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 1rem;
+  color: #f9fafb;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #2563eb; /* primary blue */
+}
+
+
+/* Modal Overlay */
+.edit-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal box */
+.edit-modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 14px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.edit-modal h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #222;
+  text-align: center;
+}
+
+.edit-modal form label {
+  display: block;
+  margin: 0.5rem 0 0.25rem;
+  font-weight: 500;
+}
+
+.edit-modal form input,
+.edit-modal form select {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  margin-bottom: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.edit-modal-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- General Section Styling --- */
+.section {
+  padding: 2rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 900px;
+}
+
+/* --- Card Grid --- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  cursor: pointer;
+}
+
+.card h3, .card h4 {
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+/* --- Form Styling --- */
+.auth-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-form h3 {
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.auth-form input,
+.auth-form textarea {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.auth-form input:focus,
+.auth-form textarea:focus {
+  border-color: #007bff;
+}
+
+.auth-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* --- Buttons --- */
+.btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+/* --- Terms & Conditions Scrollbox --- */
+.terms-box {
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f8f9fa;
+  margin-bottom: 1rem;
+}
+
+.terms-box p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+.map-container {
+  margin-top: 1rem;
+  width: 100vw;        /* full viewport width */
+  margin-left: calc(-50vw + 50%); /* center it across full screen */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  padding:10px;
+  padding-inline: 30%;
+}
